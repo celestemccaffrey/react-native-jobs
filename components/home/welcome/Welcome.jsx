@@ -12,6 +12,8 @@ import { useRouter } from 'expo-router';
 import styles from './welcome.style'
 import { icons, SIZES } from '../../../constants'
 
+const jobTypes = ["Full-time", "Part-time", "Contractor"];
+
 const Welcome = () => {
   const router = useRouter();
 
@@ -27,10 +29,29 @@ const Welcome = () => {
           <TextInput
             style={styles.searchInput}
             value=""
-            onChange={() => {}}
+            onChange={() => { }}
             placeholder="What are you looking for?"
           />
         </View>
+
+        <TouchableOpacity style={styles.searchBtn} onPress={() => { }}>
+          <Image
+            source={icons.search}
+            resizeMode="contain"
+            style={styles.searchBtnImage}
+          />
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.tabsContainer}>
+        <FlatList
+          data={jobTypes}
+          renderItem={({ item }) => (
+            <TouchableOpacity>
+              <Text>{item}</Text>
+            </TouchableOpacity>
+          )}
+        />
       </View>
     </View>
   )
