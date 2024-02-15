@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
-SplashScreen.preventAutoHideAsync();
+SplashScreen.preventAutoHideAsync(); // Prevent native splash screen from autohiding
 
 const Layout = () => {
 
@@ -15,9 +15,9 @@ const Layout = () => {
 
     const onLayoutRootView = useCallback(async () => {
         if (fontsLoaded) {
-            await SplashScreen.hideAsync();
+            await SplashScreen.hideAsync(); // Hide the native splash screen, until the fonts are loaded
         }
-    }, [fontsLoaded]);
+    }, [fontsLoaded]); // dependance array
 
     if (!fontsLoaded) return null;
 
