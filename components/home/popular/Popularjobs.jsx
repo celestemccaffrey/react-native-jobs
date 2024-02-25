@@ -26,7 +26,7 @@ const Popularjobs = () => {
           <Text>Something went wrong</Text>
         ) : (
           <FlatList
-            data={[1, 2, 3, 4]} // Replace with the data from the API
+            data={[1, 2, 3, 4, 5, 6, 7, 8]} // Replace with the data from the API
             renderItem={({ item }) => (
               <PopularJobCard
                 item={item}
