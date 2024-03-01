@@ -16,14 +16,17 @@ const Popularjobs = () => {
       num_pages: 1
     })
 
-  console.log(data)
+  const [selectedJob, setSelectedJob] = useState([])
+
+  const handleCardPress = (item) => {
+  }
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Popular jobs</Text>
         <TouchableOpacity>
-          <Text>Show all</Text>
+          <Text style={styles.headerBtn}>Show all</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.cardContainer}>
@@ -33,7 +36,7 @@ const Popularjobs = () => {
           <Text>Something went wrong</Text>
         ) : (
           <FlatList
-            data={[1, 2, 3, 4, 5, 6, 7, 8]} // Replace with the data from the API
+            data={data} // Replace with the data from the API
             renderItem={({ item }) => (
               <PopularJobCard
                 item={item}
