@@ -1,4 +1,3 @@
-search.js
 import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'react-native'
 import { Stack, useRouter, useSearchParams } from 'expo-router'
