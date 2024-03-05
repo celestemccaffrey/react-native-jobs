@@ -18,7 +18,10 @@ const Popularjobs = () => {
 
   const [selectedJob, setSelectedJob] = useState([])
 
+  // Function to handle the card press
   const handleCardPress = (item) => {
+    router.push(`/job-details/${item.job_id}`);
+    setSelectedJob(item.job_id);
   }
 
   return (
@@ -40,6 +43,8 @@ const Popularjobs = () => {
             renderItem={({ item }) => (
               <PopularJobCard
                 item={item}
+                selectedJob={selectedJob} // Deals with the selected job highlight
+                handleCardPress={handleCardPress} // Deals with handle press function
               />
             )}
             keyExtractor={(item) => item?.job_id}

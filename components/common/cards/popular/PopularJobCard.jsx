@@ -8,7 +8,7 @@ const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
   return (
     <TouchableOpacity
       style={styles.container(selectedJob, item)}
-      onPress={() => handleCardPress(item)}
+      onPress={() => handleCardPress(item)} // Deals with handle press function
     >
 
       <TouchableOpacity style={styles.logoContainer(selectedJob, item)}>
