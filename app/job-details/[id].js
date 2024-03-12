@@ -56,7 +56,19 @@ const JobDetails = () => {
       />
       <>
       {/* <ScrollView showsVerticalScrollIndicator={false} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
-        
+        {isLoading ? (
+          <ActivityIndicator size="large" color={COLORS.primary} />
+        ) : error ? (
+          <Text>{error}</Text>
+        ) : (
+          <>
+            <Company company={data.company} />
+            <JobAbout job={data.job} />
+            <Specifics specifics={data.specifics} />
+            <JobTabs />
+            <JobFooter />
+          </>
+        )}
       </ScrollView> */}
       </>
     </SafeAreaView>
